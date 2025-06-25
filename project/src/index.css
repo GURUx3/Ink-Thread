@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary-50 text-primary-800 font-sans antialiased;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+}
+
+@layer components {
+  .glass-button {
+    @apply backdrop-blur-sm bg-white/20 border border-white/30 rounded-full px-8 py-3 text-primary-800 transition-all duration-500 hover:bg-white/40 hover:border-white/50 hover:shadow-lg hover:scale-105;
+  }
+  
+  .ghost-input {
+    @apply w-full bg-transparent border-0 border-b-2 border-primary-300 px-0 py-4 text-primary-800 placeholder-transparent focus:border-accent-400 focus:outline-none transition-all duration-300;
+  }
+  
+  .ghost-label {
+    @apply absolute left-0 -top-6 text-primary-600 text-sm transition-all duration-300 pointer-events-none;
+  }
+  
+  .ghost-input:focus ~ .ghost-label,
+  .ghost-input:not(:placeholder-shown) ~ .ghost-label {
+    @apply -top-6 text-accent-500 text-xs;
+  }
+  
+  .ghost-input:placeholder-shown ~ .ghost-label {
+    @apply top-4 text-primary-500 text-base;
+  }
+}
