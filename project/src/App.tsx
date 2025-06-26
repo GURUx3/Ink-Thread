@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import Welcome from './pages/Welcome';
+import About from './pages/About';
 import BlogHome from './pages/BlogHome';
 import BlogPost from './pages/BlogPost';
-import About from './pages/About';
 import Contact from './pages/Contact';
+import CreateBlog from './pages/CreateBlog';
+import Welcome from './pages/Welcome';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/post/:id" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/create" element={<CreateBlog/>}/>
         </Routes>
       </Layout>
     </Router>

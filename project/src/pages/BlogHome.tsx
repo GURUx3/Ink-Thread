@@ -14,10 +14,11 @@ const BlogHome: React.FC = () => {
         </p>
       </header>
 
+      {/* blog post map */}
       <div className="space-y-12 md:space-y-16">
         {blogPosts.map((post, index) => (
-          <div 
-            key={post.id} 
+          <div
+            key={post.id}
             className="animate-slide-up"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
